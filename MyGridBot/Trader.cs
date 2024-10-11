@@ -21,6 +21,7 @@ namespace MyGridBot
 {
     internal class Trader
     {
+        public static string EndOrder = "";
         public static async Task<BybitOrderbookEntry> AskPriceQuantityByBit(BybitRestClient bybitRestClient, string BuySymbol)
         {
             WebCallResult<BybitOrderbook> orderBookData = null;
@@ -93,14 +94,14 @@ namespace MyGridBot
             return orderBookData.Data.Bids.First();
         }
 
-        public static async Task<decimal> AskPriceQuantityMexc(MexcRestClient mexcRestClient, string BuySymbol)
+        public static async Task<MexcOrderBookEntry> AskPriceQuantityMexc(MexcRestClient mexcRestClient, string BuySymbol)
         {
-            WebCallResult<MexcTicker> orderBookData = null;
+            WebCallResult<MexcOrderBook> orderBookData = null;
             while (true)
             {
                 try
                 {
-                    orderBookData = await mexcRestClient.SpotApi.ExchangeData.GetTickerAsync(BuySymbol);
+                    orderBookData = await mexcRestClient.SpotApi.ExchangeData.GetOrderBookAsync(BuySymbol, 1);
 
                     if (orderBookData.Error != null)
                     {
@@ -117,23 +118,23 @@ namespace MyGridBot
                                       $" Ошибка: {orderBookData.Error.Code} {orderBookData.Error.Message}");
                     Thread.Sleep(1000);
                 }
-                if (orderBookData.Data.BestAskPrice <= 0)
+                if (orderBookData.Data.Asks.First().Price <= 0)
                 {
                     continue;
                 }
                 break;
             }
-            Console.WriteLine($" AskPrice: {orderBookData.Data.BestAskPrice}");
-            return orderBookData.Data.BestAskPrice;
+            Console.WriteLine($" AskPrice: {orderBookData.Data.Asks.First().Price} AskQuantity: {orderBookData.Data.Asks.First().Quantity} ");
+            return orderBookData.Data.Asks.First();
         }
-        public static async Task<decimal> BidPriceQuantityMexc(MexcRestClient mexcRestClient, string SellSymbol)
+        public static async Task<MexcOrderBookEntry> BidPriceQuantityMexc(MexcRestClient mexcRestClient, string SellSymbol)
         {
-            WebCallResult<MexcTicker> orderBookData = null;
+            WebCallResult<MexcOrderBook> orderBookData = null;
             while (true)
             {
                 try
                 {
-                    orderBookData = await mexcRestClient.SpotApi.ExchangeData.GetTickerAsync(SellSymbol);
+                    orderBookData = await mexcRestClient.SpotApi.ExchangeData.GetOrderBookAsync(SellSymbol, 1);
                     if (orderBookData.Error != null)
                     {
                         Console.WriteLine($" Не получил данные по стакану BidPriceQuantityMexc\n" +
@@ -149,14 +150,14 @@ namespace MyGridBot
                                       $" Ошибка: {orderBookData.Error.Code} {orderBookData.Error.Message}");
                     Thread.Sleep(1000);
                 }
-                if (orderBookData.Data.BestBidPrice <= 0)
+                if (orderBookData.Data.Bids.First().Price <= 0)
                 {
                     continue;
                 }
                 break;
             }
-            Console.WriteLine($" BidPrice: {orderBookData.Data.BestBidPrice} ");
-            return orderBookData.Data.BestBidPrice;
+            Console.WriteLine($" BidPrice: {orderBookData.Data.Bids.First().Price}  BidQuantity: {orderBookData.Data.Bids.First().Quantity}");
+            return orderBookData.Data.Bids.First();
         }
 
         public static async Task BuyByBit(BybitRestClient bybitRestClient)
@@ -295,6 +296,7 @@ namespace MyGridBot
                                 {
                                     Console.BackgroundColor = ConsoleColor.White;
                                     Console.WriteLine(" Закончилась сетка на покупку");
+                                    Trader.EndOrder += "📉 Закончилась сетка на покупку\n";
                                     await Task.Delay(1000);
                                     Console.BackgroundColor = ConsoleColor.Black;
                                 }
@@ -310,7 +312,7 @@ namespace MyGridBot
                     catch (Exception ex)
                     {
                         Console.WriteLine($" Не смог открыть файл {BuySymbol}.xlsx");
-                        Console.WriteLine(ex.Message); Console.ReadLine();
+                        Console.WriteLine(ex.Message); await TG.Message($"🚨 Внимание!\n Не смог открыть файл {BuySymbol}.xlsx\n {ex.Message}\n ⛔️ Бот остановлен."); Console.ReadLine();
                     }
                 }
             }
@@ -415,6 +417,7 @@ namespace MyGridBot
                                 {
                                     Console.BackgroundColor = ConsoleColor.White;
                                     Console.WriteLine(" Закончилась сетка на продажу");
+                                    Trader.EndOrder += "📈 Закончилась сетка на продажу\n";
                                     await Task.Delay(1000);
                                     Console.BackgroundColor = ConsoleColor.Black;
                                 }
@@ -429,7 +432,7 @@ namespace MyGridBot
                     catch (Exception ex)
                     {
                         Console.WriteLine($" Не смог открыть файл {SellSymbol}.xlsx");
-                        Console.WriteLine(ex.Message); Console.ReadLine();
+                        Console.WriteLine(ex.Message); await TG.Message($"🚨 Внимание!\n Не смог открыть файл {SellSymbol}.xlsx\n {ex.Message}\n ⛔️ Бот остановлен."); Console.ReadLine();
                     }
                 }
 
@@ -442,7 +445,7 @@ namespace MyGridBot
             Console.WriteLine();
             Console.WriteLine(" >>>>>>>>>>>> Метод Buy <<<<<<<<<<<<");
 
-            decimal? Ask = null;
+            MexcOrderBookEntry Ask = null;
 
             foreach (var BuySymbol in SettingStart.SymbolList)
             {
@@ -468,25 +471,25 @@ namespace MyGridBot
                                 {
                                     if (strategPrice == 0)
                                     {
-                                        sheet.Cell(4, 15).Value = Ask;
+                                        sheet.Cell(4, 15).Value = Ask.Price;
                                         await Task.Delay(100);
                                         workbook.Save();
                                         Console.WriteLine($" Работает Трейлинг BUY\n Откат {precent} %");
                                         break;
                                     }
-                                    else if (strategPrice > Ask)
+                                    else if (strategPrice > Ask.Price)
                                     {
-                                        sheet.Cell(4, 15).Value = Ask;
+                                        sheet.Cell(4, 15).Value = Ask.Price;
                                         await Task.Delay(100);
                                         workbook.Save();
                                         Console.WriteLine($" Работает Трейлинг BUY\n Откат {precent} %");
                                         break;
                                     }
-                                    else if (strategPrice < Ask)
+                                    else if (strategPrice < Ask.Price)
                                     {
-                                        if (strategPrice + (strategPrice / 100 * precent) <= Ask)
+                                        if (strategPrice + (strategPrice / 100 * precent) <= Ask.Price)
                                         {
-                                            sheet.Cell(4, 15).Value = Ask;
+                                            sheet.Cell(4, 15).Value = Ask.Price;
                                             await Task.Delay(100);
                                             workbook.Save();
                                         }
@@ -510,7 +513,7 @@ namespace MyGridBot
                                 { continue; }
                                 if (Convert.ToInt32(sheet.Cell(i, 1).Value) == 1 && Convert.ToInt32(sheet.Cell(i, 4).Value) == 0)
                                 {
-                                    if (Ask < Convert.ToDecimal(sheet.Cell(i, 2).Value))
+                                    if (Ask.Price < Convert.ToDecimal(sheet.Cell(i, 2).Value) && Ask.Quantity > Convert.ToDecimal(sheet.Cell(i, 11).Value))
                                     {
                                         //Реинвестирование
                                         if (Convert.ToInt32(sheet.Cell(i, 5).Value) == 1)
@@ -572,6 +575,7 @@ namespace MyGridBot
                                 {
                                     Console.BackgroundColor = ConsoleColor.White;
                                     Console.WriteLine(" Закончилась сетка на покупку");
+                                    Trader.EndOrder += "📉 Закончилась сетка на покупку\n";
                                     await Task.Delay(1000);
                                     Console.BackgroundColor = ConsoleColor.Black;
                                 }
@@ -587,7 +591,7 @@ namespace MyGridBot
                     catch (Exception ex)
                     {
                         Console.WriteLine($" Не смог открыть файл {BuySymbol}.xlsx");
-                        Console.WriteLine(ex.Message); Console.ReadLine();
+                        Console.WriteLine(ex.Message); await TG.Message($"🚨 Внимание!\n Не смог открыть файл {BuySymbol}.xlsx\n {ex.Message}\n ⛔️ Бот остановлен."); Console.ReadLine();
                     }
                 }
             }
@@ -598,7 +602,7 @@ namespace MyGridBot
             Console.WriteLine();
             Console.WriteLine(" >>>>>>>>>>>> Метод Sell <<<<<<<<<<<<");
 
-            decimal? Bid = null;
+            MexcOrderBookEntry Bid = null;
 
             foreach (var SellSymbol in SettingStart.SymbolList)
             {
@@ -622,25 +626,25 @@ namespace MyGridBot
                                 {
                                     if (strategPrice == 0)
                                     {
-                                        sheet.Cell(4, 16).Value = Bid;//0.0001245
+                                        sheet.Cell(4, 16).Value = Bid.Price;//0.0001245
                                         await Task.Delay(100);
                                         workbook.Save();
                                         Console.WriteLine($" Работает Трейлинг SELL\n Откат {precent} %");
                                         break;
                                     }
-                                    else if (strategPrice < Bid)
+                                    else if (strategPrice < Bid.Price)
                                     {
-                                        sheet.Cell(4, 16).Value = Bid;
+                                        sheet.Cell(4, 16).Value = Bid.Price;
                                         await Task.Delay(100);
                                         workbook.Save();
                                         Console.WriteLine($" Работает Трейлинг SELL\n Откат {precent} %");
                                         break;
                                     }
-                                    else if (strategPrice > Bid)
+                                    else if (strategPrice > Bid.Price)
                                     {
-                                        if (strategPrice - (strategPrice / 100 * precent) >= Bid)
+                                        if (strategPrice - (strategPrice / 100 * precent) >= Bid.Price)
                                         {
-                                            sheet.Cell(4, 16).Value = Bid;
+                                            sheet.Cell(4, 16).Value = Bid.Price;
                                             await Task.Delay(100);
                                             workbook.Save();
                                         }
@@ -661,7 +665,7 @@ namespace MyGridBot
                             {
                                 if (Convert.ToInt32(sheet.Cell(i, 1).Value) == 1 && Convert.ToInt32(sheet.Cell(i, 4).Value) == 1 && Convert.ToInt32(sheet.Cell(i, 6).Value) != 2)
                                 {
-                                    if (Bid > Convert.ToDecimal(sheet.Cell(i, 3).Value))
+                                    if (Bid.Price > Convert.ToDecimal(sheet.Cell(i, 3).Value) && Bid.Quantity > Convert.ToDecimal(sheet.Cell(i, 11).Value))
                                     {
                                         Console.WriteLine();
                                         Console.WriteLine($" Продажа Торговой Пары: {SellSymbol}\n" +
@@ -692,6 +696,7 @@ namespace MyGridBot
                                 {
                                     Console.BackgroundColor = ConsoleColor.White;
                                     Console.WriteLine(" Закончилась сетка на продажу");
+                                    Trader.EndOrder += "📈 Закончилась сетка на продажу\n";
                                     await Task.Delay(1000);
                                     Console.BackgroundColor = ConsoleColor.Black;
                                 }
@@ -706,7 +711,7 @@ namespace MyGridBot
                     catch (Exception ex)
                     {
                         Console.WriteLine($" Не смог открыть файл {SellSymbol}.xlsx");
-                        Console.WriteLine(ex.Message); Console.ReadLine();
+                        Console.WriteLine(ex.Message); await TG.Message($"🚨 Внимание!\n Не смог открыть файл {SellSymbol}.xlsx\n {ex.Message}\n ⛔️ Бот остановлен."); Console.ReadLine();
                     }
                 }
 
@@ -752,7 +757,6 @@ namespace MyGridBot
                     {
                         try
                         {
-
                             resultOrderBuy = await bybitRestClient.V5Api.Trading.GetOrdersAsync
                             (
                                 category: Bybit.Net.Enums.Category.Spot,
@@ -960,7 +964,6 @@ namespace MyGridBot
                     return false;
                 }
             }
-
             return resltBuy;
         }
         static async Task<bool> SellResultByBit(BybitRestClient bybitRestClient, string SellSymbol, decimal price, decimal quantity)
@@ -1002,7 +1005,6 @@ namespace MyGridBot
                     {
                         try
                         {
-
                             resultOrderSell = await bybitRestClient.V5Api.Trading.GetOrdersAsync
                                 (
                                     category: Bybit.Net.Enums.Category.Spot,
@@ -1012,8 +1014,16 @@ namespace MyGridBot
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine($"{ex.Message} стр 972");
-                            Console.ReadLine();
+        Console.WriteLine($" {result.Error.Code} {result.Error.Message}");
+                            Console.WriteLine();
+                            if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, price, quantity))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         }
 
                         if (resultOrderSell.Error == null)
@@ -1037,9 +1047,16 @@ namespace MyGridBot
                         }
                         else
                         {
-                            Console.WriteLine($" {resultOrderSell.Error.Code} {resultOrderSell.Error.Message}");
-                            Console.WriteLine(" стр 998");
-                            Console.ReadLine();
+        Console.WriteLine($" {result.Error.Code} {result.Error.Message}");
+                            Console.WriteLine();
+                            if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, price, quantity))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         }
                     }
 
@@ -1080,7 +1097,6 @@ namespace MyGridBot
                             {
                                 try
                                 {
-
                                     resultOrderSell = await bybitRestClient.V5Api.Trading.GetOrdersAsync
                                     (
                                         category: Bybit.Net.Enums.Category.Spot,
@@ -1242,8 +1258,15 @@ namespace MyGridBot
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine($"{ex.Message} стр 1178");
-                            Console.ReadLine();
+     Console.WriteLine();
+                            if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         }
 
                         if (resultOrderBuy.Error == null)
@@ -1265,11 +1288,29 @@ namespace MyGridBot
                         {
                             resltBuy = true;
                         }
+                        else if (resultOrderBuy.Error.Message == "Request timed out")
+                        {
+                            if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
                         else
                         {
                             Console.WriteLine($" {resultOrderBuy.Error.Code} {resultOrderBuy.Error.Message}");
-                            Console.WriteLine(" стр 1204");
-                            Console.ReadLine();
+      Console.WriteLine();
+                            if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         }
                     }
 
@@ -1390,6 +1431,17 @@ namespace MyGridBot
                         {
                             resltSell = true;
                         }
+                        else if (resultOrderSell.Error.Message == "Request timed out")
+                        {
+                            if (CheckExchangeOrderStatus("MEXC", "продажа", SellSymbol, price, quantity))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
                         else
                         {
                             Console.WriteLine($" {resultOrderSell.Error.Code} {resultOrderSell.Error.Message}");
@@ -1404,7 +1456,6 @@ namespace MyGridBot
                             }
                         }
                     }
-
                 }
                 else if (result.Error.Code == 429)
                 {

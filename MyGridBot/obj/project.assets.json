@@ -2,10 +2,10 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "Bybit.Net/3.13.1": {
+      "Bybit.Net/3.14.0": {
         "type": "package",
         "dependencies": {
-          "CryptoExchange.Net": "7.11.0"
+          "CryptoExchange.Net": "8.0.0"
         },
         "compile": {
           "lib/netstandard2.1/Bybit.Net.dll": {
@@ -51,7 +51,7 @@
           "lib/netstandard2.0/ClosedXML.Report.dll": {}
         }
       },
-      "CryptoExchange.Net/7.11.0": {
+      "CryptoExchange.Net/8.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
@@ -101,10 +101,10 @@
           }
         }
       },
-      "JK.Mexc.Net/1.7.2": {
+      "JK.Mexc.Net/1.8.0": {
         "type": "package",
         "dependencies": {
-          "CryptoExchange.Net": "7.11.0"
+          "CryptoExchange.Net": "8.0.0"
         },
         "compile": {
           "lib/netstandard2.1/Mexc.Net.dll": {
@@ -1727,19 +1727,35 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Telegram.Bot/18.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Telegram.Bot.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Telegram.Bot.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       }
     }
   },
   "libraries": {
-    "Bybit.Net/3.13.1": {
-      "sha512": "GsHooAsu3cD3LzHV6scFM7unC9i5fvn+JHWOjuUX7UwrE4IpWmIW5O4nZxlp4rP1hYdsvEQpJpjSYm4LzXSiSw==",
+    "Bybit.Net/3.14.0": {
+      "sha512": "l2cbbf9sw0K3l1n6GbQMfuAPqoZ3qdSfHX+4BnDMllsjSo7Nh8HeNuDpYHcLxBPoQ61ZAUJ/LsRXo+J8Te1HbQ==",
       "type": "package",
-      "path": "bybit.net/3.13.1",
+      "path": "bybit.net/3.14.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "bybit.net.3.13.1.nupkg.sha512",
+        "bybit.net.3.14.0.nupkg.sha512",
         "bybit.net.nuspec",
         "icon.png",
         "lib/netstandard2.0/Bybit.Net.dll",
@@ -1782,15 +1798,15 @@
         "lib/netstandard2.0/ClosedXML.Report.dll"
       ]
     },
-    "CryptoExchange.Net/7.11.0": {
-      "sha512": "WKIq2vyCrP31DvzbzS/zBmLjwIkZ/kNkVwc/saqmAAN9b2Kivn13lWFUWfGBkX4PJSxfKo0CWE0u9GlgswSAWg==",
+    "CryptoExchange.Net/8.0.0": {
+      "sha512": "gpz/ILo+gzh54LSEHxhxn6hwb0hOq1hgfSMkR8lZ8rycYPmLcsfXfDBfW2nzqKLxyzOWq0bAghOAzXKc+nUBYQ==",
       "type": "package",
-      "path": "cryptoexchange.net/7.11.0",
+      "path": "cryptoexchange.net/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "cryptoexchange.net.7.11.0.nupkg.sha512",
+        "cryptoexchange.net.8.0.0.nupkg.sha512",
         "cryptoexchange.net.nuspec",
         "icon.png",
         "lib/netstandard2.0/CryptoExchange.Net.dll",
@@ -1835,16 +1851,16 @@
         "lib/netstandard2.0/ExcelNumberFormat.xml"
       ]
     },
-    "JK.Mexc.Net/1.7.2": {
-      "sha512": "DIf0QZ9fUibolIGoZcVr48u8ln5XrNkwGKpf5WSoF5oO9cwT4L7NS+7fa+UIrJ6orpIAgT0ITNqHV6lpxY1kVA==",
+    "JK.Mexc.Net/1.8.0": {
+      "sha512": "nS5XbPY/AUer7PLcPOFtyw+dwDV4qGlaL43uCTOCf1U08C1zyeh+WJ5nYH66rSFZDNWsWL5li7qpPelgoSWVEg==",
       "type": "package",
-      "path": "jk.mexc.net/1.7.2",
+      "path": "jk.mexc.net/1.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "icon.png",
-        "jk.mexc.net.1.7.2.nupkg.sha512",
+        "jk.mexc.net.1.8.0.nupkg.sha512",
         "jk.mexc.net.nuspec",
         "lib/netstandard2.0/Mexc.Net.dll",
         "lib/netstandard2.0/Mexc.Net.xml",
@@ -5785,34 +5801,48 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Telegram.Bot/18.0.0": {
+      "sha512": "BD0UchUXINymCGS+1O1tv2enCRyv+VbSJQAgfnueTZs3j7K4XXyJyW0CgyJleTrqB1oq1hS1ux6gBpi3Ajp+ZQ==",
+      "type": "package",
+      "path": "telegram.bot/18.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Telegram.Bot.dll",
+        "lib/netcoreapp3.1/Telegram.Bot.pdb",
+        "lib/netcoreapp3.1/Telegram.Bot.xml",
+        "lib/netstandard2.0/Telegram.Bot.dll",
+        "lib/netstandard2.0/Telegram.Bot.pdb",
+        "lib/netstandard2.0/Telegram.Bot.xml",
+        "package-icon.png",
+        "telegram.bot.18.0.0.nupkg.sha512",
+        "telegram.bot.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Bybit.Net >= 3.13.1",
+      "Bybit.Net >= 3.14.0",
       "ClosedXML.Report >= 0.2.3",
-      "JK.Mexc.Net >= 1.7.2"
+      "JK.Mexc.Net >= 1.8.0",
+      "Telegram.Bot >= 18.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vitas\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GRIDBoViBotByBitMEXC\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
+      "projectUniqueName": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
       "projectName": "MyGridBot",
-      "projectPath": "D:\\GRIDBoViBotByBitMEXC\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
-      "packagesPath": "C:\\Users\\vitas\\.nuget\\packages\\",
-      "outputPath": "D:\\GRIDBoViBotByBitMEXC\\MyGridBot\\MyGridBot\\obj\\",
+      "projectPath": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot\\MyGridBot\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5820,7 +5850,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5833,6 +5862,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5841,7 +5875,7 @@
         "dependencies": {
           "Bybit.Net": {
             "target": "Package",
-            "version": "[3.13.1, )"
+            "version": "[3.14.0, )"
           },
           "ClosedXML.Report": {
             "target": "Package",
@@ -5849,7 +5883,11 @@
           },
           "JK.Mexc.Net": {
             "target": "Package",
-            "version": "[1.7.2, )"
+            "version": "[1.8.0, )"
+          },
+          "Telegram.Bot": {
+            "target": "Package",
+            "version": "[18.0.0, )"
           }
         },
         "imports": [
@@ -5863,12 +5901,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.32, 6.0.32]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.32, 6.0.32]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.32, 6.0.32]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.32, 6.0.32]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

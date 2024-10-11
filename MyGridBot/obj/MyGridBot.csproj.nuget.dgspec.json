@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GRIDBoViBotByBitMEXC\\MyGridBot\\MyGridBot\\MyGridBot.csproj": {}
+    "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot\\MyGridBot\\MyGridBot.csproj": {}
   },
   "projects": {
-    "D:\\GRIDBoViBotByBitMEXC\\MyGridBot\\MyGridBot\\MyGridBot.csproj": {
+    "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot\\MyGridBot\\MyGridBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GRIDBoViBotByBitMEXC\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
+        "projectUniqueName": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
         "projectName": "MyGridBot",
-        "projectPath": "D:\\GRIDBoViBotByBitMEXC\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
-        "packagesPath": "C:\\Users\\vitas\\.nuget\\packages\\",
-        "outputPath": "D:\\GRIDBoViBotByBitMEXC\\MyGridBot\\MyGridBot\\obj\\",
+        "projectPath": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot\\MyGridBot\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -47,7 +47,7 @@
           "dependencies": {
             "Bybit.Net": {
               "target": "Package",
-              "version": "[3.13.1, )"
+              "version": "[3.14.0, )"
             },
             "ClosedXML.Report": {
               "target": "Package",
@@ -55,7 +55,11 @@
             },
             "JK.Mexc.Net": {
               "target": "Package",
-              "version": "[1.7.2, )"
+              "version": "[1.8.0, )"
+            },
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[18.0.0, )"
             }
           },
           "imports": [
@@ -69,12 +73,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.32, 6.0.32]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

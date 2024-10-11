@@ -14,7 +14,7 @@ namespace MyGridBot
         static async Task Main(string[] args)
         {
             var dateTime = DateTime.Now;
-            Console.Title = "BoViGridBot V2.6.2";
+            Console.Title = "BoViGridBot V2.6.4_TG";
             Grafic.GreetUser();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -24,8 +24,8 @@ namespace MyGridBot
                " Если MEXC нажмите 1 и нажмите ENTER");
             if (Console.ReadLine() == "0")
             {
-                Console.Title = "BoViGridBot V2.6.2 BYBIT";
-                SettingStart.Start();
+                Console.Title = "BoViGridBot V2.6.4_TG BYBIT";
+                SettingStart.Start(); TG.TGStart();
                 BybitRestClient bybitRestClient = new BybitRestClient(options =>
                 {
                     options.V5Options.ApiCredentials = new ApiCredentials(SettingStart.APIkey, SettingStart.APIsecret);
@@ -39,6 +39,10 @@ namespace MyGridBot
                 SettingStart.UpdateSymbolList();
 
                 await ResultTrade.BalanceByBit(bybitRestClient, dateTime);
+                if (TG.buttons == "True")
+                {
+                    await TG.WaitMessage();
+                }
                 while (true)
                 {
                     await Trader.BuyByBit(bybitRestClient);
@@ -50,13 +54,13 @@ namespace MyGridBot
             }
             else
             {
-                Console.Title = "BoViGridBot V2.6.2 MEXC";
-                SettingStart.StartMexc();
+                Console.Title = "BoViGridBot V2.6.4_TG MEXC";
+                SettingStart.StartMexc(); TG.TGStart();
                 MexcRestClient mexcRestClient = new MexcRestClient(opts =>
                 {
                     opts.ApiCredentials = new ApiCredentials(SettingStart.APIkey, SettingStart.APIsecret);
-                    opts.TimestampRecalculationInterval=TimeSpan.FromMinutes(1);
-                    opts.RequestTimeout = TimeSpan.FromSeconds(5);   
+                    opts.TimestampRecalculationInterval = TimeSpan.FromMinutes(1);
+                    opts.RequestTimeout = TimeSpan.FromSeconds(5);
                     //opts.ReceiveWindow = TimeSpan.FromSeconds(30);  
                     opts.AutoTimestamp = true;
                 });
@@ -64,6 +68,10 @@ namespace MyGridBot
                 await SettingStart.StartNewExelAsyncMexc(mexcRestClient);
                 SettingStart.UpdateSymbolListMexc();
                 await ResultTrade.BalanceMexc(mexcRestClient, dateTime);
+                if (TG.buttons == "True")
+                {
+                    await TG.WaitMessage();
+                }
 
                 while (true)
                 {

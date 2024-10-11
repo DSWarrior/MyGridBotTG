@@ -94,8 +94,6 @@ namespace MyGridBot
                         {
                             var sheet = workbook.Worksheet(1);
 
-                            await ComissionByBit(bybitRestClient, Symbol, Convert.ToDecimal(sheet.Cell(13, 16).Value));
-
                             if ('T' == Symbol.Last())
                             {
                                 TotalBalanceUSDT += Convert.ToDecimal(sheet.Cell(1, 12).Value);
@@ -315,8 +313,6 @@ namespace MyGridBot
                         using (var workbook = new XLWorkbook($@"..\\..\\..\\..\\WorkMexc\\{Symbol}.xlsx"))
                         {
                             var sheet = workbook.Worksheet(1);
-
-            await ComissionMexc(mexcRestClient, Symbol, Convert.ToDecimal(sheet.Cell(13, 16).Value));
 
                             if ('T' == Symbol.Last())
                             {

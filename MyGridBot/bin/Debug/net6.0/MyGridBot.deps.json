@@ -8,22 +8,23 @@
     ".NETCoreApp,Version=v6.0": {
       "MyGridBot/1.0.0": {
         "dependencies": {
-          "Bybit.Net": "3.13.1",
+          "Bybit.Net": "3.14.0",
           "ClosedXML.Report": "0.2.3",
-          "JK.Mexc.Net": "1.7.2"
+          "JK.Mexc.Net": "1.8.0",
+          "Telegram.Bot": "18.0.0"
         },
         "runtime": {
           "MyGridBot.dll": {}
         }
       },
-      "Bybit.Net/3.13.1": {
+      "Bybit.Net/3.14.0": {
         "dependencies": {
-          "CryptoExchange.Net": "7.11.0"
+          "CryptoExchange.Net": "8.0.0"
         },
         "runtime": {
           "lib/netstandard2.1/Bybit.Net.dll": {
-            "assemblyVersion": "3.13.1.0",
-            "fileVersion": "3.13.1.0"
+            "assemblyVersion": "3.14.0.0",
+            "fileVersion": "3.14.0.0"
           }
         }
       },
@@ -54,7 +55,7 @@
           }
         }
       },
-      "CryptoExchange.Net/7.11.0": {
+      "CryptoExchange.Net/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
           "Microsoft.Extensions.Http": "8.0.0",
@@ -64,8 +65,8 @@
         },
         "runtime": {
           "lib/netstandard2.1/CryptoExchange.Net.dll": {
-            "assemblyVersion": "7.11.0.0",
-            "fileVersion": "7.11.0.0"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
           }
         }
       },
@@ -89,14 +90,14 @@
           }
         }
       },
-      "JK.Mexc.Net/1.7.2": {
+      "JK.Mexc.Net/1.8.0": {
         "dependencies": {
-          "CryptoExchange.Net": "7.11.0"
+          "CryptoExchange.Net": "8.0.0"
         },
         "runtime": {
           "lib/netstandard2.1/Mexc.Net.dll": {
-            "assemblyVersion": "1.7.2.0",
-            "fileVersion": "1.7.2.0"
+            "assemblyVersion": "1.8.0.0",
+            "fileVersion": "1.8.0.0"
           }
         }
       },
@@ -981,6 +982,17 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "Telegram.Bot/18.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Telegram.Bot.dll": {
+            "assemblyVersion": "18.0.0.0",
+            "fileVersion": "18.0.0.0"
+          }
+        }
       }
     }
   },
@@ -990,12 +1002,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Bybit.Net/3.13.1": {
+    "Bybit.Net/3.14.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GsHooAsu3cD3LzHV6scFM7unC9i5fvn+JHWOjuUX7UwrE4IpWmIW5O4nZxlp4rP1hYdsvEQpJpjSYm4LzXSiSw==",
-      "path": "bybit.net/3.13.1",
-      "hashPath": "bybit.net.3.13.1.nupkg.sha512"
+      "sha512": "sha512-l2cbbf9sw0K3l1n6GbQMfuAPqoZ3qdSfHX+4BnDMllsjSo7Nh8HeNuDpYHcLxBPoQ61ZAUJ/LsRXo+J8Te1HbQ==",
+      "path": "bybit.net/3.14.0",
+      "hashPath": "bybit.net.3.14.0.nupkg.sha512"
     },
     "ClosedXML/0.95.0": {
       "type": "package",
@@ -1011,12 +1023,12 @@
       "path": "closedxml.report/0.2.3",
       "hashPath": "closedxml.report.0.2.3.nupkg.sha512"
     },
-    "CryptoExchange.Net/7.11.0": {
+    "CryptoExchange.Net/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WKIq2vyCrP31DvzbzS/zBmLjwIkZ/kNkVwc/saqmAAN9b2Kivn13lWFUWfGBkX4PJSxfKo0CWE0u9GlgswSAWg==",
-      "path": "cryptoexchange.net/7.11.0",
-      "hashPath": "cryptoexchange.net.7.11.0.nupkg.sha512"
+      "sha512": "sha512-gpz/ILo+gzh54LSEHxhxn6hwb0hOq1hgfSMkR8lZ8rycYPmLcsfXfDBfW2nzqKLxyzOWq0bAghOAzXKc+nUBYQ==",
+      "path": "cryptoexchange.net/8.0.0",
+      "hashPath": "cryptoexchange.net.8.0.0.nupkg.sha512"
     },
     "DocumentFormat.OpenXml/2.7.2": {
       "type": "package",
@@ -1032,12 +1044,12 @@
       "path": "excelnumberformat/1.0.10",
       "hashPath": "excelnumberformat.1.0.10.nupkg.sha512"
     },
-    "JK.Mexc.Net/1.7.2": {
+    "JK.Mexc.Net/1.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DIf0QZ9fUibolIGoZcVr48u8ln5XrNkwGKpf5WSoF5oO9cwT4L7NS+7fa+UIrJ6orpIAgT0ITNqHV6lpxY1kVA==",
-      "path": "jk.mexc.net/1.7.2",
-      "hashPath": "jk.mexc.net.1.7.2.nupkg.sha512"
+      "sha512": "sha512-nS5XbPY/AUer7PLcPOFtyw+dwDV4qGlaL43uCTOCf1U08C1zyeh+WJ5nYH66rSFZDNWsWL5li7qpPelgoSWVEg==",
+      "path": "jk.mexc.net/1.8.0",
+      "hashPath": "jk.mexc.net.1.8.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -1675,6 +1687,13 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Telegram.Bot/18.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BD0UchUXINymCGS+1O1tv2enCRyv+VbSJQAgfnueTZs3j7K4XXyJyW0CgyJleTrqB1oq1hS1ux6gBpi3Ajp+ZQ==",
+      "path": "telegram.bot/18.0.0",
+      "hashPath": "telegram.bot.18.0.0.nupkg.sha512"
     }
   }
 }
