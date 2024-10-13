@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Bovi\\Github.com\\MyGridBot\\MyGridBot.csproj": {}
+    "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\MyGridBot.csproj": {}
   },
   "projects": {
-    "D:\\Bovi\\Github.com\\MyGridBot\\MyGridBot.csproj": {
+    "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\MyGridBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Bovi\\Github.com\\MyGridBot\\MyGridBot.csproj",
+        "projectUniqueName": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
         "projectName": "MyGridBot",
-        "projectPath": "D:\\Bovi\\Github.com\\MyGridBot\\MyGridBot.csproj",
+        "projectPath": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Bovi\\Github.com\\MyGridBot\\obj\\",
+        "outputPath": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

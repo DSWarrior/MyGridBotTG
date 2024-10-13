@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("BoVi")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd89c70f22653e734d9044ed7acc0da4b5d4bed0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyGridBot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyGridBot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
