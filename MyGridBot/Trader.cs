@@ -1014,7 +1014,7 @@ namespace MyGridBot
                         }
                         catch (Exception ex)
                         {
-        Console.WriteLine($" {result.Error.Code} {result.Error.Message}");
+                            Console.WriteLine($" {result.Error.Code} {result.Error.Message}");
                             Console.WriteLine();
                             if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, price, quantity))
                             {
@@ -1047,7 +1047,7 @@ namespace MyGridBot
                         }
                         else
                         {
-        Console.WriteLine($" {result.Error.Code} {result.Error.Message}");
+                            Console.WriteLine($" {result.Error.Code} {result.Error.Message}");
                             Console.WriteLine();
                             if (CheckExchangeOrderStatus("ByBit", "продажа", SellSymbol, price, quantity))
                             {
@@ -1258,7 +1258,7 @@ namespace MyGridBot
                         }
                         catch (Exception ex)
                         {
-     Console.WriteLine();
+                            Console.WriteLine();
                             if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
                             {
                                 return true;
@@ -1302,7 +1302,7 @@ namespace MyGridBot
                         else
                         {
                             Console.WriteLine($" {resultOrderBuy.Error.Code} {resultOrderBuy.Error.Message}");
-      Console.WriteLine();
+                            Console.WriteLine();
                             if (CheckExchangeOrderStatus("MEXC", "покупка", BuySymbol, price, quantity))
                             {
                                 return true;

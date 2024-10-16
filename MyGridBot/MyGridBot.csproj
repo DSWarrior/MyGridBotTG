@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bybit.Net" Version="3.14.0" />
+    <PackageReference Include="Bybit.Net" Version="3.14.1" />
     <PackageReference Include="ClosedXML.Report" Version="0.2.3" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.67" />
     <PackageReference Include="JK.Mexc.Net" Version="1.8.0" />

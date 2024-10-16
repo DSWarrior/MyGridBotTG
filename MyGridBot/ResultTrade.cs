@@ -169,8 +169,9 @@ namespace MyGridBot
                             Console.Write($"{coin.WalletBalance - TotalBalanceUSDT} $");
                             Console.ForegroundColor = ConsoleColor.Magenta;
                             Console.WriteLine();
+
                             Console.ForegroundColor = ConsoleColor.Magenta;
-                            Console.Write(" Ожидаемая стоимость портфеля: ");
+                            Console.Write(" Ожидаемая стомость портфеля: ");
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.Write($"{coin.WalletBalance + ExpectedProfitUSDT} $");
                             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -196,16 +197,17 @@ namespace MyGridBot
                             Console.Write($"{coin.WalletBalance - TotalBalanceUSDC} $");
                             Console.ForegroundColor = ConsoleColor.Magenta;
                             Console.WriteLine();
+
                             Console.ForegroundColor = ConsoleColor.Magenta;
-                            Console.Write(" Ожидаемая стоимость портфеля: ");
+                            Console.Write(" Ожидаемая стомость портфеля: ");
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.Write($"{coin.WalletBalance + ExpectedProfitUSDC} $");
                             Console.ForegroundColor = ConsoleColor.Magenta;
                             Console.WriteLine();
                             USDCtotal = coin.WalletBalance;
-                        }
                     }
                 }
+            }
             }
             TGmessage += $"\n📊 Ожидаемая стоимость\n💼USDT: {USDTtotal + ExpectedProfitUSDT}\n💼USDC: {USDCtotal + ExpectedProfitUSDC}\n\n";
             if (Trader.EndOrder != "")
@@ -248,10 +250,6 @@ namespace MyGridBot
                 if (Flag >= TG.Sorting)
                 {
                     await TG.SendMessageAsync(TGmessage);
-                    if (TG.Bashorg == "True")
-                    {
-                        await TG.BashOrgNet();
-                    }                    
                     Flag = 0;
                 }
             }
@@ -320,7 +318,7 @@ namespace MyGridBot
                         {
                             var sheet = workbook.Worksheet(1);
 
-            await ComissionMexc(mexcRestClient, Symbol, Convert.ToDecimal(sheet.Cell(13, 16).Value));
+                            await ComissionMexc(mexcRestClient, Symbol, Convert.ToDecimal(sheet.Cell(13, 16).Value));
 
                             if ('T' == Symbol.Last())
                             {
@@ -389,8 +387,9 @@ namespace MyGridBot
                         Console.Write($"{coin.Total - TotalBalanceUSDT} $");
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine();
+
                         Console.ForegroundColor = ConsoleColor.Magenta;
-                        Console.Write(" Ожидаемая стоимость портфеля: ");
+                        Console.Write(" Ожидаемая стомость портфеля: ");
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.Write($"{coin.Total + ExpectedProfitUSDT} $");
                         Console.ForegroundColor = ConsoleColor.Magenta;
@@ -416,14 +415,15 @@ namespace MyGridBot
                         Console.Write($"{coin.Total - TotalBalanceUSDC} $");
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine();
+
                         Console.ForegroundColor = ConsoleColor.Magenta;
-                        Console.Write(" Ожидаемая стоимость портфеля: ");
+                        Console.Write(" Ожидаемая стомость портфеля: ");
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.Write($"{coin.Total + ExpectedProfitUSDC} $");
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine();
                         USDCtotal = coin.Total;
-                    }
+                }
                 }
             }
             TGmessage += $"\n📊 Ожидаемая стоимость\n💼USDT: {USDTtotal + ExpectedProfitUSDT}\n💼USDC: {USDCtotal + ExpectedProfitUSDC}\n";
@@ -467,16 +467,13 @@ namespace MyGridBot
                 if (Flag >= TG.Sorting)
                 {
                     await TG.SendMessageAsync(TGmessage);
-                    if (TG.Bashorg == "True")
-                    {
-                        await TG.BashOrgNet();
-                    }
                     Flag = 0;
                 }
             }
 
             if (Copy >= 50)
             {
+                Console.ForegroundColor = ConsoleColor.Blue;
                 await NewExcel.SortBuySellMexcAsync();
                 Copy = 0;
                 CopyTable.Copy(@"..\\..\\..\\..\\WorkMexc", @"..\\..\\..\\..\\WorkCopyMexc");

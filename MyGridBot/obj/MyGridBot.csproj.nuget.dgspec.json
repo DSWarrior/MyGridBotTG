@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\MyGridBot.csproj": {}
+    "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj": {}
   },
   "projects": {
-    "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\MyGridBot.csproj": {
+    "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
+        "projectUniqueName": "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj",
         "projectName": "MyGridBot",
-        "projectPath": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\MyGridBot.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Bovi\\MyGridBot 2.6.4_TG\\MyGridBot 2.6.4_TG_bash\\MyGridBot\\MyGridBot\\obj\\",
+        "projectPath": "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj",
+        "packagesPath": "C:\\Users\\gergardt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gergardt\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,7 +47,7 @@
           "dependencies": {
             "Bybit.Net": {
               "target": "Package",
-              "version": "[3.14.0, )"
+              "version": "[3.14.1, )"
             },
             "ClosedXML.Report": {
               "target": "Package",
@@ -80,19 +80,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.32, 6.0.32]"
+              "version": "[6.0.35, 6.0.35]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.32, 6.0.32]"
+              "version": "[6.0.35, 6.0.35]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.32, 6.0.32]"
+              "version": "[6.0.35, 6.0.35]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.32, 6.0.32]"
+              "version": "[6.0.35, 6.0.35]"
             }
           ],
           "frameworkReferences": {
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
