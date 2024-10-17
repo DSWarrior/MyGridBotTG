@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using ClosedXML.Report.Options;
 using System;
 using System.Net.Http;
 using System.Threading;
@@ -14,20 +15,21 @@ namespace MyGridBot
 {
     internal class TG
     {
-        public static int Sorting = 50;
-        public static string Token = "";
-        public static string Notify = "";
-        public static string Bashorg = "";
-        public static string Buttons = "";
+        public static int SendReport { get; set; } = 50; // Если значение не указано, то отправлять отчет через 50 циклов Buy/Sell
+        public static int Sorting { get; set; } = 50; // Если значение не указано, то сортировать монеты через 50 циклов Buy/Sell
+        public static string Token { get; set; } = "";
+        public static string Notify { get; set; } = "";
+        public static string Bashorg { get; set; } = "";
+        public static string Buttons { get; set; } = "";
         public static string Report = "📊 Подготовка отчета";
         public static TelegramBotClient Client = new(Token);
         public static Chat Chat = new();
-        private static readonly string PathTG = @"..\\..\\..\\..\\Telegram.xlsx";
+        private static readonly string PathTG = @"..\\..\\..\\..\\Telegram.xlsx"; // Расположение конфигурационного файла
         private static ITelegramBotClient _botClient;
         private static ReceiverOptions _receiverOptions;
         private static readonly HttpClient HttpClient = new();
 
-        public static async Task SendMessageAsync(string message)
+        public static async Task SendMessageAsync(string message) 
         {
             if (!string.IsNullOrEmpty(Token))
             {
@@ -61,9 +63,10 @@ namespace MyGridBot
                     Chat.Id = Convert.ToInt64(sheetTG.Cell(2, 2).Value);
                     Client = new TelegramBotClient(Token);
                     Notify = sheetTG.Cell(3, 2).Value.ToString();
-                    Sorting = Convert.ToInt32(sheetTG.Cell(4, 2).Value);
+                    SendReport = Convert.ToInt32(sheetTG.Cell(4, 2).Value);
                     Buttons = sheetTG.Cell(5, 2).Value.ToString();
                     Bashorg = sheetTG.Cell(6, 2).Value.ToString();
+                    Sorting = Convert.ToInt32(sheetTG.Cell(7, 2).Value);
                 }
                 else
                 {

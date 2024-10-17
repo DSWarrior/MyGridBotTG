@@ -230,13 +230,13 @@ namespace MyGridBot
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine();
 
-            if (50 - Copy > 0)
+            if (TG.Sorting - Copy > 0)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine();
                 Console.Write(" Сортировка будет через (");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"{50 - Copy}");
+                Console.Write($"{TG.Sorting - Copy}");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(") прокрутов");
                 Console.ForegroundColor = ConsoleColor.Magenta;
@@ -247,14 +247,14 @@ namespace MyGridBot
             if (TG.Notify == "True")
             {
                 Flag++;
-                if (Flag >= TG.Sorting)
+                if (Flag >= TG.SendReport)
                 {
                     await TG.SendMessageAsync(TGmessage);
                     Flag = 0;
                 }
             }
 
-            if (Copy >= 50)
+            if (Copy >= TG.Sorting)
             {
                 //Сортировка
                 Console.ForegroundColor = ConsoleColor.Blue;
@@ -447,13 +447,13 @@ namespace MyGridBot
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine();
 
-            if (50 - Copy > 0)
+            if (TG.Sorting - Copy > 0)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine();
                 Console.Write(" Сортировка будет через (");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"{50 - Copy}");
+                Console.Write($"{TG.Sorting - Copy}");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(") прокрутов");
                 Console.ForegroundColor = ConsoleColor.Magenta;
@@ -464,14 +464,14 @@ namespace MyGridBot
             if (TG.Notify == "True")
             {
                 Flag++;
-                if (Flag >= TG.Sorting)
+                if (Flag >= TG.SendReport)
                 {
                     await TG.SendMessageAsync(TGmessage);
                     Flag = 0;
                 }
             }
 
-            if (Copy >= 50)
+            if (Copy >= TG.Sorting)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 await NewExcel.SortBuySellMexcAsync();

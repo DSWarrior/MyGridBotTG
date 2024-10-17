@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "MyGridBot/1.0.0": {
         "dependencies": {
-          "Bybit.Net": "3.14.0",
+          "Bybit.Net": "3.14.1",
           "ClosedXML.Report": "0.2.3",
           "HtmlAgilityPack": "1.11.67",
           "JK.Mexc.Net": "1.8.0",
@@ -18,14 +18,14 @@
           "MyGridBot.dll": {}
         }
       },
-      "Bybit.Net/3.14.0": {
+      "Bybit.Net/3.14.1": {
         "dependencies": {
           "CryptoExchange.Net": "8.0.0"
         },
         "runtime": {
           "lib/netstandard2.1/Bybit.Net.dll": {
-            "assemblyVersion": "3.14.0.0",
-            "fileVersion": "3.14.0.0"
+            "assemblyVersion": "3.14.1.0",
+            "fileVersion": "3.14.1.0"
           }
         }
       },
@@ -1011,12 +1011,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Bybit.Net/3.14.0": {
+    "Bybit.Net/3.14.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-l2cbbf9sw0K3l1n6GbQMfuAPqoZ3qdSfHX+4BnDMllsjSo7Nh8HeNuDpYHcLxBPoQ61ZAUJ/LsRXo+J8Te1HbQ==",
-      "path": "bybit.net/3.14.0",
-      "hashPath": "bybit.net.3.14.0.nupkg.sha512"
+      "sha512": "sha512-l9Koan/zE+QWBeej/2hYSG2dYs0fjEizs2gp4ExO6RSHVgqjyG0nmCsiaxQquTidR5nO6YLTL+AW5mHzSFHQtg==",
+      "path": "bybit.net/3.14.1",
+      "hashPath": "bybit.net.3.14.1.nupkg.sha512"
     },
     "ClosedXML/0.95.0": {
       "type": "package",

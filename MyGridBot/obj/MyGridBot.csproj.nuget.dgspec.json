@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj": {}
+    "C:\\Users\\gergardt\\source\\repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj": {
+    "C:\\Users\\gergardt\\source\\repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj",
+        "projectUniqueName": "C:\\Users\\gergardt\\source\\repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj",
         "projectName": "MyGridBot",
-        "projectPath": "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj",
+        "projectPath": "C:\\Users\\gergardt\\source\\repos\\MyGridBotTG\\MyGridBot\\MyGridBot.csproj",
         "packagesPath": "C:\\Users\\gergardt\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\gergardt\\Source\\Repos\\MyGridBotTG\\MyGridBot\\obj\\",
         "projectStyle": "PackageReference",

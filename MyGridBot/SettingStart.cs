@@ -165,7 +165,7 @@ namespace MyGridBot
                 string response = Console.ReadLine();
 
                 //Создание ексель под торговую пару
-                if (response.ToUpper() == "ДА")
+                if (response.ToUpper() == "Y")
                 {
                     Console.WriteLine(" Укажите торговую пару и нажмите ENTER\n" +
                                       " Пример: BTCUSDT");
@@ -175,18 +175,18 @@ namespace MyGridBot
                     await NewExcel.TradingPairAsync(tradingPair.ToUpper(), bybitRestClient);
 
                     Console.WriteLine(" Хотите ещё создать ексель для торговой пары?\n" +
-                                      " Напишите ДА или НЕТ и нижмите ENTER");
+                                      " Напишите Y или N и нижмите ENTER");
                 }
                 else { break; }
             }
             Console.WriteLine(" Создать ли Вам сетку для торговой пары?\n" +
-                              " Напишите ДА или НЕТ и нижмите ENTER");
+                              " Напишите Y или N и нижмите ENTER");
             while (true)
             {
                 string response = Console.ReadLine();
 
                 //Создание ексель под торговую пару
-                if (response.ToUpper() == "ДА")
+                if (response.ToUpper() == "Y")
                 {
                     Console.WriteLine(" Укажите торговую пару и нажмите ENTER\n" +
                                       " Пример: BTCUSDT");
@@ -196,7 +196,7 @@ namespace MyGridBot
                     await NewExcel.Setka(tradingPair.ToUpper(), bybitRestClient);
 
                     Console.WriteLine(" Хотите ещё создать сетку для торговой пары?\n" +
-                                      " Напишите ДА или НЕТ и нижмите ENTER");
+                                      " Напишите Y или N и нижмите ENTER");
                 }
                 else { break; }
             }
@@ -206,13 +206,13 @@ namespace MyGridBot
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine();
             Console.WriteLine(" Хотите создать новую ексель для торговой пары?\n" +
-                              " Напишите ДА или НЕТ и нижмите ENTER");
+                              " Напишите Y или N и нижмите ENTER");
             while (true)
             {
                 string response = Console.ReadLine();
 
                 //Создание ексель под торговую пару
-                if (response.ToUpper() == "ДА")
+                if (response.ToUpper() == "Y")
                 {
                     Console.WriteLine(" Укажите торговую пару и нажмите ENTER\n" +
                                       " Пример: BTCUSDT");
@@ -222,18 +222,18 @@ namespace MyGridBot
                     await NewExcel.TradingPairAsyncMexc(tradingPair.ToUpper(), mexcRestClient);
 
                     Console.WriteLine(" Хотите ещё создать ексель для торговой пары?\n" +
-                                      " Напишите ДА или НЕТ и нижмите ENTER");
+                                      " Напишите Y или N и нижмите ENTER");
                 }
                 else { break; }
             }
             Console.WriteLine(" Создать ли Вам сетку для торговой пары?\n" +
-                              " Напишите ДА или НЕТ и нижмите ENTER");
+                              " Напишите Y или N и нижмите ENTER");
             while (true)
             {
                 string response = Console.ReadLine();
 
                 //Создание ексель под торговую пару
-                if (response.ToUpper() == "ДА")
+                if (response.ToUpper() == "Y")
                 {
                     Console.WriteLine(" Укажите торговую пару и нажмите ENTER\n" +
                                       " Пример: BTCUSDT");
@@ -243,7 +243,7 @@ namespace MyGridBot
                     await NewExcel.SetkaMexc(tradingPair.ToUpper(), mexcRestClient);
 
                     Console.WriteLine(" Хотите ещё создать сетку для торговой пары?\n" +
-                                      " Напишите ДА или НЕТ и нижмите ENTER");
+                                      " Напишите Y или N и нижмите ENTER");
                 }
                 else { break; }
             }
