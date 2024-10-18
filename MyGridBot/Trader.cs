@@ -22,6 +22,8 @@ namespace MyGridBot
     internal class Trader
     {
         public static string EndOrder = "";
+        public static string BuyEndOrder = "";
+        public static string SellEndOrder = "";
         public static async Task<BybitOrderbookEntry> AskPriceQuantityByBit(BybitRestClient bybitRestClient, string BuySymbol)
         {
             WebCallResult<BybitOrderbook> orderBookData = null;
@@ -162,6 +164,7 @@ namespace MyGridBot
 
         public static async Task BuyByBit(BybitRestClient bybitRestClient)
         {
+            Trader.BuyEndOrder = "";
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine();
             Console.WriteLine(" >>>>>>>>>>>> Метод Buy <<<<<<<<<<<<");
@@ -312,13 +315,19 @@ namespace MyGridBot
                     catch (Exception ex)
                     {
                         Console.WriteLine($" Не смог открыть файл {BuySymbol}.xlsx");
-                        Console.WriteLine(ex.Message); await TG.SendMessageAsync($"🚨 Внимание!\n Не смог открыть файл {BuySymbol}.xlsx\n {ex.Message}\n ⛔️ Бот остановлен."); Console.ReadLine();
+                        Console.WriteLine(ex.Message);
+                        await TG.SendMessageAsync($"🚨 Внимание!\n" +
+                                                  $"Не смог открыть файл {BuySymbol}.xlsx\n" +
+                                                  $"{ex.Message}\n" +
+                                                  $"⛔️ Бот остановлен.");
+                        Console.ReadLine();
                     }
                 }
             }
         }
         public static async Task SellByBit(BybitRestClient bybitRestClient)
         {
+            Trader.SellEndOrder = "";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
             Console.WriteLine(" >>>>>>>>>>>> Метод Sell <<<<<<<<<<<<");
@@ -432,7 +441,12 @@ namespace MyGridBot
                     catch (Exception ex)
                     {
                         Console.WriteLine($" Не смог открыть файл {SellSymbol}.xlsx");
-                        Console.WriteLine(ex.Message); await TG.SendMessageAsync($"🚨 Внимание!\n Не смог открыть файл {SellSymbol}.xlsx\n {ex.Message}\n ⛔️ Бот остановлен."); Console.ReadLine();
+                        Console.WriteLine(ex.Message);
+                        await TG.SendMessageAsync($"🚨 Внимание!\n" +
+                                                  $"Не смог открыть файл {SellSymbol}.xlsx\n" +
+                                                  $"{ex.Message}\n" +
+                                                  $"⛔️ Бот остановлен.");
+                        Console.ReadLine();
                     }
                 }
 
@@ -441,6 +455,7 @@ namespace MyGridBot
 
         public static async Task BuyMexc(MexcRestClient mexcRestClient)
         {
+            Trader.BuyEndOrder = "";
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine();
             Console.WriteLine(" >>>>>>>>>>>> Метод Buy <<<<<<<<<<<<");
@@ -575,7 +590,7 @@ namespace MyGridBot
                                 {
                                     Console.BackgroundColor = ConsoleColor.White;
                                     Console.WriteLine(" Закончилась сетка на покупку");
-                                    Trader.EndOrder += "📉 Закончилась сетка на покупку\n";
+                                    Trader.BuyEndOrder += "📉 Закончилась сетка на покупку\n";
                                     await Task.Delay(1000);
                                     Console.BackgroundColor = ConsoleColor.Black;
                                 }
@@ -591,13 +606,19 @@ namespace MyGridBot
                     catch (Exception ex)
                     {
                         Console.WriteLine($" Не смог открыть файл {BuySymbol}.xlsx");
-                        Console.WriteLine(ex.Message); await TG.SendMessageAsync($"🚨 Внимание!\n Не смог открыть файл {BuySymbol}.xlsx\n {ex.Message}\n ⛔️ Бот остановлен."); Console.ReadLine();
+                        Console.WriteLine(ex.Message);
+                        await TG.SendMessageAsync($"🚨 Внимание!\n" +
+                                                  $"Не смог открыть файл {BuySymbol}.xlsx\n" +
+                                                  $"{ex.Message}\n" +
+                                                  $"⛔️ Бот остановлен.");
+                        Console.ReadLine();
                     }
                 }
             }
         }
         public static async Task SellMexc(MexcRestClient mexcRestClient)
         {
+            Trader.SellEndOrder = "";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
             Console.WriteLine(" >>>>>>>>>>>> Метод Sell <<<<<<<<<<<<");
@@ -696,7 +717,7 @@ namespace MyGridBot
                                 {
                                     Console.BackgroundColor = ConsoleColor.White;
                                     Console.WriteLine(" Закончилась сетка на продажу");
-                                    Trader.EndOrder += "📈 Закончилась сетка на продажу\n";
+                                    Trader.SellEndOrder += "📈 Закончилась сетка на продажу\n";
                                     await Task.Delay(1000);
                                     Console.BackgroundColor = ConsoleColor.Black;
                                 }
@@ -711,7 +732,12 @@ namespace MyGridBot
                     catch (Exception ex)
                     {
                         Console.WriteLine($" Не смог открыть файл {SellSymbol}.xlsx");
-                        Console.WriteLine(ex.Message); await TG.SendMessageAsync($"🚨 Внимание!\n Не смог открыть файл {SellSymbol}.xlsx\n {ex.Message}\n ⛔️ Бот остановлен."); Console.ReadLine();
+                        Console.WriteLine(ex.Message);
+                        await TG.SendMessageAsync($"🚨 Внимание!\n" +
+                                                  $"Не смог открыть файл {SellSymbol}.xlsx\n" +
+                                                  $"{ex.Message}\n" +
+                                                  $"⛔️ Бот остановлен.");
+                        Console.ReadLine();
                     }
                 }
 
@@ -1493,6 +1519,7 @@ namespace MyGridBot
 
         static public bool CheckExchangeOrderStatus(string exchange, string typeBS, string symbol, decimal price, decimal quantity)
         {
+            TG.SendMessageAsync("🚨 Внимание!\nОшибка, зайдите на биржу.\n⛔️ Бот остановлен.");
             Console.WriteLine($" Получили ошибку, зайдите на биржу: {exchange}\n" +
                               $" В историю ордеров, проверьте данный ордер:\n" +
                               $" Торговая пара: {symbol}\n" +

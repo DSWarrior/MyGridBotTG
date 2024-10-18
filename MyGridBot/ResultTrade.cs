@@ -29,7 +29,6 @@ namespace MyGridBot
         static decimal USDCtotal { get; set; } = 0;
         static int Copy { get; set; } = 0;
         public static long Flag = 0; // Кол-во сортировок до уведомления
-
         public static async Task BalanceByBit(BybitRestClient bybitRestClient, DateTime dateTime)
         {
             Copy++; string TGmessage = "🏦 Биржа Bybit\n";
@@ -205,20 +204,18 @@ namespace MyGridBot
                             Console.ForegroundColor = ConsoleColor.Magenta;
                             Console.WriteLine();
                             USDCtotal = coin.WalletBalance;
+                        }
                     }
                 }
             }
-            }
-            TGmessage += $"\n📊 Ожидаемая стоимость\n💼USDT: {USDTtotal + ExpectedProfitUSDT}\n💼USDC: {USDCtotal + ExpectedProfitUSDC}\n\n";
-            if (Trader.EndOrder != "")
-            {
-                TGmessage += $"\n{Trader.EndOrder}\n\n⚖️ Сделки:\n" + $"📉 Buy: {Buy} 📈 Sell: {Sell}";
-                Trader.EndOrder = "";
-            }
-            else
-            {
-                TGmessage += $"⚖️ Сделки:\n" + $"📉 Buy: {Buy} 📈 Sell: {Sell}";
-            }
+            TGmessage += $"\n📊 Ожидаемая стоимость\n💼USDT: {USDTtotal + ExpectedProfitUSDT}\n💼USDC: {USDCtotal + ExpectedProfitUSDC}\n";
+
+            // Проверка на конец сетки
+            if (Trader.BuyEndOrder != "") { TGmessage += $"{Trader.BuyEndOrder}"; }
+            if (Trader.SellEndOrder != "") { TGmessage += $"{Trader.SellEndOrder}"; }
+            if (Trader.BuyEndOrder != "" || Trader.SellEndOrder != "") { TGmessage += $"\n"; }
+
+            TGmessage += $"\n⚖️ Сделки:\n" + $"📉 Buy: {Buy} 📈 Sell: {Sell}";
             Console.WriteLine();
             Console.Write($" Сделки: Buy: ");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -230,6 +227,7 @@ namespace MyGridBot
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine();
 
+            // Уведомление о сортировке
             if (TG.Sorting - Copy > 0)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
@@ -244,6 +242,7 @@ namespace MyGridBot
 
             TG.Report = TGmessage;
 
+            // Если включено уведомление, то отправлять отчеты
             if (TG.Notify == "True")
             {
                 Flag++;
@@ -254,6 +253,7 @@ namespace MyGridBot
                 }
             }
 
+            // Сортировка и резервное копирование
             if (Copy >= TG.Sorting)
             {
                 //Сортировка
@@ -423,19 +423,17 @@ namespace MyGridBot
                         Console.ForegroundColor = ConsoleColor.Magenta;
                         Console.WriteLine();
                         USDCtotal = coin.Total;
+                    }
                 }
-                }
             }
-            TGmessage += $"\n📊 Ожидаемая стоимость\n💼USDT: {USDTtotal + ExpectedProfitUSDT}\n💼USDC: {USDCtotal + ExpectedProfitUSDC}\n";
-            if (Trader.EndOrder != "")
-            {
-                TGmessage += $"\n{Trader.EndOrder}\n⚖️ Сделки:\n" + $"📉 Buy: {Buy} 📈 Sell: {Sell}";
-                Trader.EndOrder = "";
-            }
-            else
-            {
-                TGmessage += $"\n⚖️ Сделки:\n" + $"📉 Buy: {Buy} 📈 Sell: {Sell}";
-            }
+            TGmessage += $"\n📊 Ожидаемая стоимость\n💼USDT: {USDTtotal + ExpectedProfitUSDT}\n💼USDC: {USDCtotal + ExpectedProfitUSDC}\n\n";
+            
+            // Проверка на конец сетки
+            if (Trader.BuyEndOrder != ""){TGmessage += $"{Trader.BuyEndOrder}";}
+            if (Trader.SellEndOrder != ""){TGmessage += $"{Trader.SellEndOrder}";}
+            if (Trader.BuyEndOrder != "" || Trader.SellEndOrder != ""){TGmessage += $"\n";}
+
+            TGmessage += $"⚖️ Сделки:\n" + $"📉 Buy: {Buy} 📈 Sell: {Sell}";
             Console.WriteLine();
             Console.Write($" Сделки: Buy: ");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -447,6 +445,7 @@ namespace MyGridBot
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine();
 
+            // Уведомление о сортировке
             if (TG.Sorting - Copy > 0)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
@@ -461,6 +460,7 @@ namespace MyGridBot
 
             TG.Report = TGmessage;
 
+            // Если включено уведомление, то отправлять отчеты
             if (TG.Notify == "True")
             {
                 Flag++;
@@ -471,6 +471,7 @@ namespace MyGridBot
                 }
             }
 
+            // Сортировка и резервное копирование
             if (Copy >= TG.Sorting)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
@@ -566,6 +567,11 @@ namespace MyGridBot
                         {
                             if (FeeByBit.TakerFeeRate * 100 > comission)
                             {
+                                await TG.SendMessageAsync($"🚨 Внимание! ⛔️ Бот остановлен.\n" +
+                                                          $"Комиссия биржи стала выше,\n" +
+                                                          $"а именно: {FeeByBit.TakerFeeRate * 100}%\n" +
+                                                          $"Измените комиссию в таблице:\n" +
+                                                          $"{symbol}.xlsx и нажмите ENTER");
                                 Console.WriteLine();
                                 Console.WriteLine($" Комиссия биржи стала выше, а именно: {FeeByBit.TakerFeeRate * 100} %\n" +
                                                   $" Измените комиссию в ексель: {symbol}.xlsx\n" +
@@ -611,6 +617,11 @@ namespace MyGridBot
                         {
                             if (FeeMexc.TakerFee * 100 > comission)
                             {
+                                await TG.SendMessageAsync($"🚨 Внимание! ⛔️ Бот остановлен.\n" +
+                                                          $"Комиссия биржи стала выше,\n" +
+                                                          $"а именно: {FeeMexc.TakerFee * 100}%\n" +
+                                                          $"Измените комиссию в таблице:\n" +
+                                                          $"{symbol}.xlsx и нажмите ENTER");
                                 Console.WriteLine();
                                 Console.WriteLine($" Комиссия биржи стала выше, а именно: {FeeMexc.TakerFee * 100} %\n" +
                                                   $" Измените комиссию в ексель: {symbol}.xlsx\n" +

@@ -13,6 +13,7 @@ namespace MyGridBot
     {
         static async Task Main(string[] args)
         {
+            await TG.TGConfig();
             var dateTime = DateTime.Now;
             Console.Title = "BoViGridBot V2.6.5_TG";
             Grafic.GreetUser();
@@ -25,7 +26,7 @@ namespace MyGridBot
             if (Console.ReadLine() == "0")
             {
                 Console.Title = "BoViGridBot V2.6.5_TG BYBIT";
-                SettingStart.Start(); TG.TGStart();
+                SettingStart.Start(); 
                 BybitRestClient bybitRestClient = new BybitRestClient(options =>
                 {
                     options.V5Options.ApiCredentials = new ApiCredentials(SettingStart.APIkey, SettingStart.APIsecret);
@@ -37,12 +38,8 @@ namespace MyGridBot
 
                 await SettingStart.StartNewExelAsync(bybitRestClient);
                 SettingStart.UpdateSymbolList();
-
                 await ResultTrade.BalanceByBit(bybitRestClient, dateTime);
-                if (TG.Buttons == "True")
-                {
-                    await TG.WaitMessage();
-                }
+                
                 while (true)
                 {
                     await Trader.BuyByBit(bybitRestClient);
@@ -55,7 +52,7 @@ namespace MyGridBot
             else
             {
                 Console.Title = "BoViGridBot V2.6.5_TG MEXC";
-                SettingStart.StartMexc(); TG.TGStart();
+                SettingStart.StartMexc();
                 MexcRestClient mexcRestClient = new MexcRestClient(opts =>
                 {
                     opts.ApiCredentials = new ApiCredentials(SettingStart.APIkey, SettingStart.APIsecret);
@@ -68,10 +65,6 @@ namespace MyGridBot
                 await SettingStart.StartNewExelAsyncMexc(mexcRestClient);
                 SettingStart.UpdateSymbolListMexc();
                 await ResultTrade.BalanceMexc(mexcRestClient, dateTime);
-                if (TG.Buttons == "True")
-                {
-                    await TG.WaitMessage();
-                }
 
                 while (true)
                 {

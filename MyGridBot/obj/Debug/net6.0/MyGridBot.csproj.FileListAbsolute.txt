@@ -517,3 +517,139 @@ C:\Users\gergardt\source\repos\MyGridBotTG\MyGridBot\obj\Debug\net6.0\refint\MyG
 C:\Users\gergardt\source\repos\MyGridBotTG\MyGridBot\obj\Debug\net6.0\MyGridBot.pdb
 C:\Users\gergardt\source\repos\MyGridBotTG\MyGridBot\obj\Debug\net6.0\MyGridBot.genruntimeconfig.cache
 C:\Users\gergardt\source\repos\MyGridBotTG\MyGridBot\obj\Debug\net6.0\ref\MyGridBot.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\MyGridBot.exe
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\MyGridBot.deps.json
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\MyGridBot.runtimeconfig.json
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\MyGridBot.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\MyGridBot.pdb
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Bybit.Net.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\ClosedXML.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\ClosedXML.Report.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\CryptoExchange.Net.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\ExcelNumberFormat.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\HtmlAgilityPack.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Mexc.Net.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\MoreLinq.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\System.IO.Packaging.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\System.Text.Json.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\Telegram.Bot.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
+D:\Bovi\Github.com\MyGridBot\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.AssemblyReference.cache
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.AssemblyInfoInputs.cache
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.AssemblyInfo.cs
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.CoreCompileInputs.cache
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.sourcelink.json
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.Up2Date
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.dll
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\refint\MyGridBot.dll
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.pdb
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\MyGridBot.genruntimeconfig.cache
+D:\Bovi\Github.com\MyGridBot\obj\Debug\net6.0\ref\MyGridBot.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.exe
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.deps.json
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.runtimeconfig.json
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.pdb
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Bybit.Net.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\ClosedXML.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\ClosedXML.Report.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\CryptoExchange.Net.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\ExcelNumberFormat.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\HtmlAgilityPack.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Mexc.Net.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\MoreLinq.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\System.IO.Packaging.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\System.Text.Json.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\Telegram.Bot.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.AssemblyReference.cache
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.GeneratedMSBuildEditorConfig.editorconfig
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.AssemblyInfoInputs.cache
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.AssemblyInfo.cs
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.CoreCompileInputs.cache
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.Up2Date
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\refint\MyGridBot.dll
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.pdb
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.genruntimeconfig.cache
+D:\_BoviBot_\MyGridBot 2.6.5_TG\MyGridBot\MyGridBot\obj\Debug\net6.0\ref\MyGridBot.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.exe
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.deps.json
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.runtimeconfig.json
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\MyGridBot.pdb
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Bybit.Net.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\ClosedXML.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\ClosedXML.Report.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\CryptoExchange.Net.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\ExcelNumberFormat.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\HtmlAgilityPack.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Mexc.Net.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Http.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\MoreLinq.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\System.IO.Packaging.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\Telegram.Bot.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.0\System.Drawing.Common.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Drawing.Common.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.AssemblyInfo.cs
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.csproj.Up2Date
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\refint\MyGridBot.dll
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.pdb
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\MyGridBot.genruntimeconfig.cache
+C:\Users\User\Downloads\MyGridBot\MyGridBot\obj\Debug\net6.0\ref\MyGridBot.dll

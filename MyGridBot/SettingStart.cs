@@ -16,9 +16,8 @@ namespace MyGridBot
         static string _patnMexc = @"..\\..\\..\\..\\WorkMexc\\Setting.xlsx";
         public static string APIkey { get; set; }
         public static string APIsecret { get; set; }
-
         public static List<string> SymbolList;
-
+        
         public static void Start()
         {
             Console.WriteLine(" Открываю ексель Setting.xlsx в папке Work");
@@ -40,8 +39,8 @@ namespace MyGridBot
                                 workbook.Dispose();
                                 continue;
                             }
-                            APIkey = sheet.Cell(1, 3).Value.ToString();
-                            APIsecret = sheet.Cell(2, 3).Value.ToString();
+                            APIkey = sheet.Cell(1, 3).GetString();
+                            APIsecret = sheet.Cell(2, 3).GetString();
                             break;
                         }
                     }
@@ -75,8 +74,8 @@ namespace MyGridBot
                                 workbook.Dispose();
                                 continue;
                             }
-                            APIkey = sheet.Cell(1, 3).Value.ToString();
-                            APIsecret = sheet.Cell(2, 3).Value.ToString();
+                            APIkey = sheet.Cell(1, 3).GetString();
+                            APIsecret = sheet.Cell(2, 3).GetString();
                             break;
                         }
                     }
@@ -107,7 +106,7 @@ namespace MyGridBot
                         {
                             if (sheet.Cell(i, 1).IsEmpty() != true)
                             {
-                                SymbolList.Add(sheet.Cell(i, 1).Value.ToString());
+                                SymbolList.Add(sheet.Cell(i, 1).GetString());
                             }
                             else { break; }
                         }
@@ -139,7 +138,7 @@ namespace MyGridBot
                         {
                             if (sheet.Cell(i, 1).IsEmpty() != true)
                             {
-                                SymbolList.Add(sheet.Cell(i, 1).Value.ToString());
+                                SymbolList.Add(sheet.Cell(i, 1).GetString());
                             }
                             else { break; }
                         }
@@ -159,7 +158,7 @@ namespace MyGridBot
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine();
             Console.WriteLine(" Хотите создать новую ексель для торговой пары?\n" +
-                              " Напишите ДА или НЕТ и нижмите ENTER");
+                              " Напишите Y или N и нижмите ENTER");
             while (true)
             {
                 string response = Console.ReadLine();
